@@ -1,0 +1,9 @@
+{
+  "name": "mosca-mqtt-broker",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "mosca": "^2.8.3"
+  }
+}

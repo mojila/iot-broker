@@ -1,0 +1,9 @@
+{
+  "name": "mosca-mqtt-subscriber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "mqtt": "^3.0.0"
+  }
+}
