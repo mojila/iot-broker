@@ -3,7 +3,7 @@ FROM node:lts-slim
 WORKDIR /app
 
 RUN apt update
-RUN apt install python3 -y
+RUN apt install python python3 make -y
 
 COPY package.json .
 RUN yarn
