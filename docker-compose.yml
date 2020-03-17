@@ -6,7 +6,7 @@ services:
       context: ./broker
       dockerfile: Dockerfile
     ports: 
-      - 443:443
+      - 8000:443
     deploy:
       mode: replicated
       replicas: 2
