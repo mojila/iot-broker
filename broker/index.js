@@ -24,8 +24,9 @@ function connect() {
   // fired when a message is received
   server.on("published", function(packet, client) {
     if (packet.topic.split("/")[0] != "$SYS") {
-      console.log(packet.payload.toString("utf-8"));
-      console.log("Published : ", packet.payload.toString("utf-8"));
+      let data = JSON.parse(packet.payload.toString("utf-8"))
+
+      console.log("Published : ", data);
     }
   });
 
