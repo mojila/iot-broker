@@ -1,4 +1,5 @@
 const mosca = require("mosca");
+const axios = require("axios")
 const settings = {
   port: 443
 };
@@ -25,8 +26,13 @@ function connect() {
   server.on("published", function(packet, client) {
     if (packet.topic.split("/")[0] != "$SYS") {
       let data = JSON.parse(packet.payload.toString("utf-8"))
+      let flatten = {}
+      
+      Object.values(data).forEach((value) => {
+        Object.entries(value).forEach(([key, value]) => (flatten[key] = value))
+      })
 
-      console.log("Published : ", data);
+      axios.post('https://pantau-trafo.herokuapp.com/api/conn', flatten)
     }
   });
 
