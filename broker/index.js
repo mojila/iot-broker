@@ -33,6 +33,9 @@ function connect() {
       })
 
       axios.post('https://pantau-trafo.herokuapp.com/api/conn', flatten)
+        .catch((err) => {
+          console.error(err)
+        })
     }
   });
 
