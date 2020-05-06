@@ -24,6 +24,7 @@ function connect() {
 
   // fired when a message is received
   server.on("published", function(packet, client) {
+    console.log(packet.payload.toString("utf-8"))
     if (packet.topic.split("/")[0] != "$SYS") {
       let data = JSON.parse(packet.payload.toString("utf-8"))
       let flatten = {}
